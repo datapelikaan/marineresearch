@@ -1,25 +1,26 @@
 ---
-title: "R Training Fundamentals - Pronexus"
+title: "Workshop: Programming skills in R"
 output:
   html_document:
     toc: false
 ---
 
 
-Deze website is tijdelijk, en bevat materialen en links voor de R cursus bij Pronexus.
+This temporary website accompanies the workshop at WUR Marine Research, 5 and 19 March 2020.
 
 <br>
 
-<span style="font-size: 1.4em">[E-versie van de Syllabus](https://remkoduursma.github.io/learningguidetor)</span>
+For this course we follow selected chapters from :
 
-<span style="font-size: 1.4em">[Exercises: solutions](compiled_html/lgr_exercises.html)</span>
+<span style="font-size: 1.4em">[A Learning Guide to R](https://remkoduursma.github.io/learningguidetor)</span>
 
 <hr>
 
-Laat hier graag even weten wat je van de training vond.
-Heb je nog opmerkingen, kritiek, of complimenten? Laat het ook even weten.
+- [Chapter 4 : Lists, Functions, and Loops](https://remkoduursma.github.io/learningguidetor/programming.html)
+- [Chapter 6 : Version control with git and Rstudio](https://remkoduursma.github.io/learningguidetor/versioncontrol.html)
+- [Chapter 7 : R Project management](https://remkoduursma.github.io/learningguidetor/projectman.html)
+- [Chapter 8 : Mastering R Package Dependencies scripts](https://remkoduursma.github.io/learningguidetor/rpackages.html)
 
-<span style="font-size: 1.4em">[Link naar enquete en feedback](https://forms.gle/dCNyAMxFE1ZkCv6N6)</span>
 
 
 
@@ -29,8 +30,4 @@ Heb je nog opmerkingen, kritiek, of complimenten? Laat het ook even weten.
 <br>
 <br>
 
-
-### Deze cursus is aangeboden door
-
-[![](images/logo_small.jpg)](https://www.shintolabs.nl/)
 

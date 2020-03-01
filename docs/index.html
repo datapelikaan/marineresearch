@@ -7,11 +7,12 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>R Training Fundamentals - Pronexus</title>
+<title>Workshop: Programming skills in R</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -83,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -244,18 +244,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -287,9 +275,6 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="presentaties.html">Presentaties</a>
-</li>
-<li>
   <a href="links.html">Links</a>
 </li>
       </ul>
@@ -304,24 +289,24 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">R Training Fundamentals - Pronexus</h1>
+<h1 class="title toc-ignore">Workshop: Programming skills in R</h1>
 
 </div>
 
 
-<p>Deze website is tijdelijk, en bevat materialen en links voor de R cursus bij Pronexus.</p>
+<p>This temporary website accompanies the workshop at WUR Marine Research, 5 and 19 March 2020.</p>
 <p><br></p>
-<p><span style="font-size: 1.4em"><a href="https://remkoduursma.github.io/learningguidetor">E-versie van de Syllabus</a></span></p>
-<p><span style="font-size: 1.4em"><a href="compiled_html/lgr_exercises.html">Exercises: solutions</a></span></p>
+<p>For this course we follow selected chapters from :</p>
+<p><span style="font-size: 1.4em"><a href="https://remkoduursma.github.io/learningguidetor">A Learning Guide to R</a></span></p>
 <hr>
-<p>Laat hier graag even weten wat je van de training vond. Heb je nog opmerkingen, kritiek, of complimenten? Laat het ook even weten.</p>
-<p><span style="font-size: 1.4em"><a href="https://forms.gle/dCNyAMxFE1ZkCv6N6">Link naar enquete en feedback</a></span></p>
+<ul>
+<li><a href="https://remkoduursma.github.io/learningguidetor/programming.html">Chapter 4 : Lists, Functions, and Loops</a></li>
+<li><a href="https://remkoduursma.github.io/learningguidetor/versioncontrol.html">Chapter 6 : Version control with git and Rstudio</a></li>
+<li><a href="https://remkoduursma.github.io/learningguidetor/projectman.html">Chapter 7 : R Project management</a></li>
+<li><a href="https://remkoduursma.github.io/learningguidetor/rpackages.html">Chapter 8 : Mastering R Package Dependencies scripts</a></li>
+</ul>
 <hr>
 <p><br> <br> <br></p>
-<div id="deze-cursus-is-aangeboden-door" class="section level3">
-<h3>Deze cursus is aangeboden door</h3>
-<p><a href="https://www.shintolabs.nl/"><img src="images/logo_small.jpg" /></a></p>
-</div>
 
 
 
@@ -340,6 +325,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

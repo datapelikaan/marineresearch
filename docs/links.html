@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -83,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -244,18 +244,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -287,9 +275,6 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="presentaties.html">Presentaties</a>
-</li>
-<li>
   <a href="links.html">Links</a>
 </li>
       </ul>
@@ -318,9 +303,9 @@ $(document).ready(function () {
 </div>
 <div id="rtools" class="section level1">
 <h1>Rtools</h1>
-<p>Alleen nodig op Windows om R packages van Github te installeren, of je eigen package bouwen.</p>
+<p>On Windows, you need to install RNeeded to install packages from Github or Bitbucket or elsewhere:</p>
 <ul>
-<li><a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools (selecteer Rtools 35.exe)</a></li>
+<li><a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools (select recommended version)</a></li>
 </ul>
 </div>
 <div id="rmarkdown" class="section level1">
@@ -329,18 +314,6 @@ $(document).ready(function () {
 <li><a href="https://bookdown.org/yihui/rmarkdown/html-document.html">Opties voor HTML output (Rstudio)</a></li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/word-document.html">Opties voor MS Word output (Rstudio)</a></li>
 <li><a href="https://yihui.name/knitr/options/">Opties voor <code>knitr</code> (opties in de code chunks)</a></li>
-</ul>
-</div>
-<div id="voorbeeld-rmarkdown-document" class="section level1">
-<h1>Voorbeeld rmarkdown document</h1>
-<ul>
-<li><a href="data/olieproductie.Rmd">Olie productie</a></li>
-</ul>
-</div>
-<div id="voorbeeld-data" class="section level1">
-<h1>Voorbeeld data</h1>
-<ul>
-<li>Extra voorbeeld dataset als CSV : <a href="data/mushroom.csv">mushroom.csv</a></li>
 </ul>
 </div>
 
@@ -361,6 +334,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
