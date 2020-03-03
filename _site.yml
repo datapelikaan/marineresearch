@@ -1,10 +1,12 @@
-name: "Pronexus R Training"
+name: "Marine Research Workshop"
 output_dir: docs
 navbar:
-  title: "R Cursus"
+  title: "R Workshop"
   left:
     - text: "Home"
       href: index.html
+    - text: "Slides"
+      href: presentaties.html
     - text: "Links"
       href: links.html
 output:

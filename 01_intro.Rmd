@@ -1,0 +1,109 @@
+---
+title: "R Programming Skills"
+subtitle: "Wageningen Marine Research, March 2020"
+author: "Remko Duursma"
+institute: "~DataPelikaan"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, css/custom.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+background-image: url(images/classroom.jpg)
+class: fitbackground
+
+# Welcome!
+
+
+
+---
+
+# R Programming Skills
+
+
+The objectives of this workshop:
+
+1. .large[Write 'better' R scripts: more stable, more transparent, more reproducible]
+
+2. .large[Organize files in a project: inputs / functions / scripts / outputs]
+
+3. .large[Use version control (*git*) to keep track of all your changes, undo mistakes, collaborate.]
+
+
+.bottom[
+  ![](images/letterr50.png)
+]
+
+---
+
+background-image: url(images/classroom.jpg)
+class: fitbackground
+
+# You
+
+
+---
+
+background-image: url(images/trainschedule.png)
+class: fitbackground
+
+# Schedule
+
+
+---
+# Schedule
+
+.pull-left[
+
+## Workshop 1
+
+- .large[Project management: Rstudio projects, file organization do's and don'ts]
+- .large[Script basics]
+- .large[Version control with *git*]
+
+## Homework
+
+- .large[Organize your project!]
+
+## Workshop 2
+
+- .large[Mastering package dependencies]
+- .large[Improve your code, write more functions]
+
+]
+
+.pull-right[
+
+  ![](images/trainschedule.png)
+]
+
+
+
+
+---
+
+background-image: url(images/shanghairoads.jpg)
+class: fitbackground
+
+# This is not a schedule
+
+
+
+---
+
+# Resources
+
+- **Bookmark this site** : [datapelikaan.github.io/marineresearch/]()
+
+.center[![](images/learningguide.png)]
+
+
+
+
+

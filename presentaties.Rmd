@@ -1,0 +1,12 @@
+---
+title: "Slides"
+output:
+  html_document:
+    toc: false
+---
+
+
+<br>
+
+- <span style="font-size: 1.5em">[Workshop 1 : Introduction](01_intro.html)</span>
+

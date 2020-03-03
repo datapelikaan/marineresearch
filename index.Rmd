@@ -1,33 +1,44 @@
 ---
-title: "Workshop: Programming skills in R"
+title: "Workshop: Programming Skills in R"
 output:
   html_document:
     toc: false
 ---
 
 
-This temporary website accompanies the workshop at WUR Marine Research, 5 and 19 March 2020.
+This temporary website accompanies the workshop at *WUR Marine Research*, 5 and 19 March 2020.
 
-<br>
+
+
+### Workshop materials
 
 For this course we follow selected chapters from :
 
 <span style="font-size: 1.4em">[A Learning Guide to R](https://remkoduursma.github.io/learningguidetor)</span>
 
-<hr>
+by [Remko Duursma](https://www.remkoduursma.com)
 
-- [Chapter 4 : Lists, Functions, and Loops](https://remkoduursma.github.io/learningguidetor/programming.html)
+
+Depending on interest in the group and time, I will demonstrate selected sections from the following chapters:
+
+- [Chapter 4 : R Programming: Lists, Functions, and Loops](https://remkoduursma.github.io/learningguidetor/programming.html)
 - [Chapter 6 : Version control with git and Rstudio](https://remkoduursma.github.io/learningguidetor/versioncontrol.html)
 - [Chapter 7 : R Project management](https://remkoduursma.github.io/learningguidetor/projectman.html)
 - [Chapter 8 : Mastering R Package Dependencies scripts](https://remkoduursma.github.io/learningguidetor/rpackages.html)
 
+Feel free to browse the rest of the book. 
+
+The **printable** version of the book can be found via a PDF icon link in the online book.
+
+#### Example Project
+
+I will demonstrate some key concepts in an example project shared with me by Floor Soudijn. We also will use the project to practice collaborating via *git* version control. 
+
+The repository is available here (it will only be publicly available during the course):
+
+[https://bitbucket.org/soudijn/rcourseaalcode]()
 
 
 
-
-<hr>
-<br>
-<br>
-<br>
 
 
