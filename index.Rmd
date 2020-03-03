@@ -18,7 +18,6 @@ For this course we follow selected chapters from :
 
 by [Remko Duursma](https://www.remkoduursma.com)
 
-
 Depending on interest in the group and time, I will demonstrate selected sections from the following chapters:
 
 - [Chapter 4 : R Programming: Lists, Functions, and Loops](https://remkoduursma.github.io/learningguidetor/programming.html)
@@ -29,6 +28,8 @@ Depending on interest in the group and time, I will demonstrate selected section
 Feel free to browse the rest of the book. 
 
 The **printable** version of the book can be found via a PDF icon link in the online book.
+
+Solutions to the exercises (though I expect you will be working on your own project) [can be found here](compiled_html/lgr_exercises.html).
 
 #### Example Project
 

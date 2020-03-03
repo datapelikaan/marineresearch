@@ -10,3 +10,6 @@ output:
 
 - <span style="font-size: 1.5em">[Workshop 1 : Introduction](01_intro.html)</span>
 
+<br>
+
+- <span style="font-size: 1.5em">[Project Management](02_workflowtalk.html)</span>
