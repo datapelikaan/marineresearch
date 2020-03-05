@@ -9,7 +9,7 @@
 
 
 
-  <meta name="date" content="2015-04-17" />
+  <meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -101,19 +101,20 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">17 April 2015</p>
+            <p style="margin-top: 6px; margin-left: -2px;">5 March 2020</p>
           </hgroup>
   </slide>
 
 <slide class=""><hgroup><h2>Reproducible research</h2></hgroup><article  id="reproducible-research">
 
-<ul>
-<li>Organize your work so that you have <strong>everything</strong> in a script</li>
-<li>The script reproduces all of your work, when run from a <strong>clean workspace</strong></li>
+<ol>
+<li>Reproduce your results by <strong>running a script</strong> that contains the entire workflow</li>
 <li>Outputs (figures, processed datasets) are <strong>disposable</strong>, your scripts can always re-produce the output</li>
-</ul>
+<li><strong>Document</strong> everything: how do I reproduce the main results? Are there settings I have to worry about? What dependencies are there?</li>
+<li>Make your code <strong>readable</strong> by organizing it in logical sub-units (as separate scripts, and custom functions)</li>
+</ol>
 
-<img src='../screenshots/reprresearchbook.jpg' title=''/>
+<img src='screenshots/reprresearchbook.jpg' title=''/>
 
 </article></slide><slide class=""><hgroup><h2>A few key principles (1)</h2></hgroup><article  id="a-few-key-principles-1">
 
@@ -121,6 +122,7 @@ slide:not(.current) .plotly.html-widget{
 <li><p>Organize code and data in a single folder for each &lsquo;project&rsquo;</p></li>
 <li><p>Do not mix code for separate projects</p></li>
 <li><p>Keep raw (original) data in a sub-folder, and <strong>never modify raw data</strong></p></li>
+<li><p>Do not hang on to a collection of &lsquo;old&rsquo; scripts, commented-out code, bits that don’t work.</p></li>
 <li><p>Use <em>projects</em> in Rstudio to manage files and your workspace</p></li>
 </ul>
 
@@ -129,7 +131,7 @@ slide:not(.current) .plotly.html-widget{
 <ul>
 <li>Write functions as much as possible</li>
 <li>Keep code that defines functions separate from other code</li>
-<li>Use a logical folder structure to organize files in a project (example later, and see Chapter 11)</li>
+<li>Use a logical folder structure to organize files in a project</li>
 </ul>
 
 <img src='../screenshots/folderstructure.png' title=''/>
@@ -137,14 +139,15 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Project size</h2></hgroup><article  id="project-size">
 
 <ul>
-<li><p>Try to avoid very large projects, instead split them into more <strong>manageable chunks</strong>.</p></li>
-<li><p>As a rule of thumb, a &lsquo;project&rsquo; is about the size of the analysis for a single manuscript.</p></li>
+<li><p>Try to avoid very large projects, instead split them into more <strong>manageable chunks</strong>, where possible.</p></li>
+<li><p>Do not write long scripts, instead split them into small scripts - each script &ldquo;does one thing&rdquo;</p></li>
 <li><p>Over time, projects always have the tendency to grow in size. If you archive old work, try to get used to:</p>
 
 <ul>
 <li><strong>deleting garbage</strong> code and/or files that have accumulated</li>
 <li><strong>completely starting over</strong>. Sometimes it is best to reorganize your work completely.</li>
 </ul></li>
+<li><p>With version control, you have no need to hang on to old code - it can be safely deleted and always found in your <em>git</em> history if you are interested.</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Folder structure</h2></hgroup><article  id="folder-structure">
@@ -155,13 +158,15 @@ slide:not(.current) .plotly.html-widget{
 
 <p>In this simple example, we keep functions and scripts in the <code>R</code> folder, the raw data files (normally as CSV) in <code>rawdata</code>, and output is sent to the <code>output</code> folder.</p>
 
+<p>The root of the project contains a &ldquo;master&rdquo; script that controls the entire workflow, usually calling other scripts or executing custom functions (with arguments).</p>
+
 </article></slide><slide class=""><hgroup><h2>Working with folders</h2></hgroup><article  id="working-with-folders">
 
-<h3>Reading raw data</h3>
+<p>Do <strong>not use absolute paths</strong> anywhere to refer to the location of a file (there are rare exceptions to this rule). Instead, use the <em>working directory</em> (the project root) as a starting point, and find files with the relative path, for example:</p>
 
 <pre class = 'prettyprint lang-r'>allom &lt;- read.csv(&quot;rawdata/allometry.csv&quot;)</pre>
 
-<h3>Saving a pdf</h3>
+<p>and</p>
 
 <pre class = 'prettyprint lang-r'>pdf(&quot;output/Figure1.pdf&quot;)
 plot(height ~ diameter, data=allom)
@@ -182,7 +187,7 @@ source(&quot;R/functions.R&quot;)
 source(&quot;R/readdata.R&quot;)
 
 # Make figures
-source(&quot;R/figures.R&quot;)
+source(&quot;R/make_figures.R&quot;)
 
 # Do stats
 source(&quot;R/linearmodels.R&quot;)</pre>

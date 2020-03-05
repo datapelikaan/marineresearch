@@ -13,3 +13,7 @@ output:
 <br>
 
 - <span style="font-size: 1.5em">[Project Management](02_workflowtalk.html)</span>
+
+<br>
+
+- <span style="font-size: 1.5em">[Version Control with *git*](03_versioncontrol.html)</span>

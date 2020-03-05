@@ -1,17 +1,20 @@
 ---
 title: "Project management and workflow"
 author: Remko Duursma
-date: 17 April 2015
+date: 5 March 2020
 output: ioslides_presentation
 ---
 
+
 ## Reproducible research
 
-- Organize your work so that you have **everything** in a script
-- The script reproduces all of your work, when run from a **clean workspace**
-- Outputs (figures, processed datasets) are **disposable**, your scripts can always re-produce the output
+1. Reproduce your results by **running a script** that contains the entire workflow
+2. Outputs (figures, processed datasets) are **disposable**, your scripts can always re-produce the output
+3. **Document** everything: how do I reproduce the main results? Are there settings I have to worry about? What dependencies are there?
+4. Make your code **readable** by organizing it in logical sub-units (as separate scripts, and custom functions)
 
-![](../screenshots/reprresearchbook.jpg)
+
+![](screenshots/reprresearchbook.jpg)
 
 
 ## A few key principles (1)
@@ -19,27 +22,30 @@ output: ioslides_presentation
 - Organize code and data in a single folder for each 'project'
 - Do not mix code for separate projects
 - Keep raw (original) data in a sub-folder, and **never modify raw data**
+- Do not hang on to a collection of 'old' scripts, commented-out code, bits that don't work.
 
 - Use *projects* in Rstudio to manage files and your workspace
-
 
 ## A few key principles (2)
 
 - Write functions as much as possible
 - Keep code that defines functions separate from other code
-- Use a logical folder structure to organize files in a project (example later, and see Chapter 11)
+- Use a logical folder structure to organize files in a project
 
 ![](../screenshots/folderstructure.png)
 
+
 ## Project size
 
-- Try to avoid very large projects, instead split them into more **manageable chunks**. 
+- Try to avoid very large projects, instead split them into more **manageable chunks**, where possible. 
 
-- As a rule of thumb, a 'project' is about the size of the analysis for a single manuscript.
+- Do not write long scripts, instead split them into small scripts - each script "does one thing"
 
 - Over time, projects always have the tendency to grow in size. If you archive old work, try to get used to: 
     + **deleting garbage** code and/or files that have accumulated
     + **completely starting over**. Sometimes it is best to reorganize your work completely.
+
+- With version control, you have no need to hang on to old code - it can be safely deleted and always found in your *git* history if you are interested.
 
 
 ## Folder structure
@@ -51,16 +57,20 @@ To keep raw data separate from scripts, functions, and outputs, a good folder st
   
 In this simple example, we keep functions and scripts in the `R` folder, the raw data files (normally as CSV) in `rawdata`, and output is sent to the `output` folder. 
 
+The root of the project contains a "master" script that controls the entire workflow, usually calling other scripts or executing custom functions (with arguments).
+
 
 ## Working with folders
 
-### Reading raw data
+
+Do **not use absolute paths** anywhere to refer to the location of a file (there are rare exceptions to this rule). Instead, use the *working directory* (the project root) as a starting point, and find files with the relative path, for example:
+
 
 ```{r, eval=FALSE}
 allom <- read.csv("rawdata/allometry.csv")
 ```
 
-### Saving a pdf
+and 
 
 ```{r, eval=FALSE}
 pdf("output/Figure1.pdf")
@@ -85,7 +95,7 @@ source("R/functions.R")
 source("R/readdata.R")
 
 # Make figures
-source("R/figures.R")
+source("R/make_figures.R")
 
 # Do stats
 source("R/linearmodels.R")

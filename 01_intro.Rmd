@@ -15,10 +15,35 @@ output:
       ratio: '16:9'
 ---
 
-background-image: url(images/classroom.jpg)
-class: fitbackground
 
-# Welcome!
+# Schedule
+
+.pull-left[
+
+## Workshop 1
+
+- .large[Script basics]
+- .large[Project management: Rstudio projects]
+- .large[Version control with *git*]
+- .large[Project management: file organization and workflow]
+
+## Homework
+
+- .large[Organize your project!]
+
+## Workshop 2
+
+- .large[Mastering package dependencies]
+- .large[Improve your code, write more functions]
+- ...
+
+]
+
+.pull-right[
+
+  ![](images/trainschedule.png)
+]
+
 
 
 
@@ -31,9 +56,9 @@ The objectives of this workshop:
 
 1. .large[Write 'better' R scripts: more stable, more transparent, more reproducible]
 
-2. .large[Organize files in a project: inputs / functions / scripts / outputs]
+2. .large[Organize files: what inputs were used to produce which outputs?]
 
-3. .large[Use version control (*git*) to keep track of all your changes, undo mistakes, collaborate.]
+3. .large[Use version control (*git*) to keep track of all your changes, undo mistakes, collaborate, avoid clutter.]
 
 
 .bottom[
@@ -48,51 +73,6 @@ class: fitbackground
 # You
 
 
----
-
-
-background-image: url(images/classroom.jpg)
-class: fitbackground
-
-# You
-
-
-
----
-
-background-image: url(images/trainschedule.png)
-class: fitbackground
-
-# Schedule
-
-
----
-# Schedule
-
-.pull-left[
-
-## Workshop 1
-
-- .large[Project management: Rstudio projects, file organization do's and don'ts]
-- .large[Script basics]
-- .large[Version control with *git*]
-
-## Homework
-
-- .large[Organize your project!]
-
-## Workshop 2
-
-- .large[Mastering package dependencies]
-- .large[Improve your code, write more functions]
-
-]
-
-.pull-right[
-
-  ![](images/trainschedule.png)
-]
-
 
 
 
@@ -101,7 +81,7 @@ class: fitbackground
 background-image: url(images/shanghairoads.jpg)
 class: fitbackground
 
-# This is not a schedule
+# Find your way
 
 
 
