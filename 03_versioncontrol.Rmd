@@ -2,7 +2,9 @@
 title: "Version control with git and Rstudio"
 author: "Remko Duursma"
 date: "5 March 2020"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    widescreen: true
 ---
 
 
@@ -13,27 +15,29 @@ With git version control you can:
 1. Keep a **history** of all the changes you have made to your code.
 2. Be able to **revert** to an old version, or briefly look around in old code, or find any code you have written in at some time in the past.
 3. **Undo** fatal coding mistakes.
-4. **Avoid multiple versions** of the same script (`myscrip_v1.R`, `myscript_v1_mod2.R` etc.), and commented-out bits of code that you no longer need.
-5. **Collaborate** with others on the same code, and easily merge the changes you and your collaborators make.
-6. Maintain an **online backup** of your code base, and allow easy **sharing** of that code with others.
+
+![](screenshots/git.png)
+
+## Why version control?
+
+With git version control you can:
+
+4. **Avoid multiple versions** of the same script (`myscrip_v1.R`, `myscript_v1_mod2.R` etc.)
+5. Keep code clean, deleting commented-out code that you no longer need.
+6. **Collaborate** with others on the same code, and easily merge the changes you and your collaborators make.
+7. Maintain an **online backup** of your code base, and allow easy **sharing** of that code with others.
 
 
-## Some notes on project management
 
-* Aim towards a reproducible workflow
-* Most importantly, make a distinction between **code that generates outputs**, and the **actual outputs** (data, figures)
-* Code is a first-class citizen, outputs are *expendable*
-* With *git*, you 'should' only track the inputs (normally, code), not the outputs (exceptions do occur!)
+## git : manage the files in a folder
 
-
-## Basics of git (1)
-
-* With git, each folder can have its own git repository. 
+* With git, each folder can have its own git "repository"
 * The repository is stored in a hidden subfolder (`.git`)
-* A git repository keeps track of as many files as you like in that folder.
-* Thus very important to have proper folder management : each small project has its own folder and corresponding git repository
-* git repositories are **always local**, and optionally you can sync with a remote repository
-* We can run git from the command line, or use basic functionality in Rstudio
+
+![](screenshots/gitfolder.png)
+
+* Here, git can *see* all the changes to files in the root ("main.R") and all its subfolders (R, data, output, ...).
+* You have to decide which files to "track" (and you can *ignore* others)
 
 
 ## Basics of git (2)
@@ -41,17 +45,22 @@ With git version control you can:
 * Changes to the files are not 'saved' automatically, you have to decide when you want to store a snapshot of the files in your repository.
 * To do so, you **stage** edited (or added) files, then **commit** them to the repository.
 * You can decide which changes to keep, and which ones to discard.
-* Every commit has a unique code (the 'SHA'), and a commit message describing what you did to the code
-* You can always go back to an old commit, either temporarily (to look around), or to reset fatal mistakes.
+
+
+![](screenshots/gitfirststaging.png)
+
+The first time you "initialize" git in a folder.
+
+Empty folders are not shown. 
 
 
 
+## What to track?
 
-## Basics of git (3)
+* A good rule of thumb is to **only track code, not outputs or data**
 
-* It is up to the user which files to track in the git repository.
-* As mentioned, it is very good practice to **only track inputs (code), not outputs**
 * Typically only track text-based files (`.R`, `.txt`), not binary files (`.pdf`, `.docx`). 
+
 * Every time git stores a snapshot of your repository, it includes a new copy of the changed files.
 * For text-based files, it only stores the *difference* with the previous version (the "diff").
 * If binary files are included, the size of the repository will grow quickly and become impractical.
@@ -67,7 +76,6 @@ git repositories are **always local**, and optionally you can sync with a remote
 * You can also fetch changes in the remote not on your computer (**pull**)
 * These changes can be from a collaborator, or from yourself on another computer
 
-
 ## git, github, bitbucket
 
 * *git* is the actual version control system
@@ -80,6 +88,8 @@ git repositories are **always local**, and optionally you can sync with a remote
 * Rstudio has a convenient GUI to use basic functionality of git
 * You can also use *git* from the command line, which we need sometimes.
 * Also, when you have *many* files in your repository to stage, the Rstudio menu can be very slow
+
+![](screenshots/gitrstudio.png)
 
 
 ## Installing

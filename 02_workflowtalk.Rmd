@@ -1,115 +1,383 @@
 ---
-title: "Project management and workflow"
+title: "R Project Management"
 author: Remko Duursma
-date: 5 March 2020
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    widescreen: true
 ---
+
+<style>
+.smaller{
+	font-size: 10px;
+	padding: 2px;
+}
+.mediumsmall{
+  font-size: 15px;
+}
+
+</style>
+
+
+
+
+
+
+## Ten things any *good* R project should be:
+
+> 1. **Reproducible** : the analysis can be carried out on another machine / later / by someone else
+> 2. **Documented**: how do we run the analysis? what are inputs/outputs?
+> 3. **Well-structured** : main scripts / other code / data / output / settings / documentation
+> 4. **Clean** : throw away things you don't need
+> 5. **Modular** : use functions as much as possible to structure your work, and avoid duplication
+> 6. **Time-saving** : use a simple cache, or a workflow manager for slow steps
+> 7. **Configurable** : collect configuration settings in a separate file
+> 8. **Versioned**: use *git* version control for every single project (no exceptions)
+> 9. **Well-named** : use clear *names* for things (functions, objects, files and folders)
+> 10. **Small** : often, a single project becomes too large to manage well
+
 
 
 ## Reproducible research
 
-1. Reproduce your results by **running a script** that contains the entire workflow
-2. Outputs (figures, processed datasets) are **disposable**, your scripts can always re-produce the output
-3. **Document** everything: how do I reproduce the main results? Are there settings I have to worry about? What dependencies are there?
-4. Make your code **readable** by organizing it in logical sub-units (as separate scripts, and custom functions)
+A project can be run by another user* on another computer on a different OS
+
+> 1. **Platform**. Does the project run only on Windows?
+> 2. **Software** Except R, do we need other software? Beware: some packages have system dependencies (especially on Linux)!
+> 3. **R Packages**. Did you keep R package dependencies to a minimum? Are all packages hosted on CRAN? Do you need specific versions?
+> 4. Do we need passwords or other **configuration** to run the project, not included in version control?
+> 5. For advanced usage: strongly consider using **docker** for reproducible projects ([see here](https://ropenscilabs.github.io/r-docker-tutorial/)).
+
+'* <span style="font-size:0.8em;">This could be you, in the future</span>
+
+## Documentation
 
 
-![](screenshots/reprresearchbook.jpg)
+Comments in the code are nice, but also write a `README.md` for each project:
+
+![](screenshots/readmemd.png)  
 
 
-## A few key principles (1)
+```{r, eval = FALSE, include=FALSE}
 
-- Organize code and data in a single folder for each 'project'
-- Do not mix code for separate projects
-- Keep raw (original) data in a sub-folder, and **never modify raw data**
-- Do not hang on to a collection of 'old' scripts, commented-out code, bits that don't work.
+# Almere Parking Analysis
 
-- Use *projects* in Rstudio to manage files and your workspace
+This repository contains the code for an analysis of parking data in Almere for 2019.
 
-## A few key principles (2)
+## Dependencies
 
-- Write functions as much as possible
-- Keep code that defines functions separate from other code
-- Use a logical folder structure to organize files in a project
+- Needs R (>3.6)
+- All R package dependencies are listed in  `R/load_packages.R`.
+- Runs on Windows, Mac, Linux.
 
-![](../screenshots/folderstructure.png)
+## Instructions
 
+- Add a `config.yml` file with password for database access (see below).
 
-## Project size
+- Run the `main.R` script, all outputs are written to `output/`.
 
-- Try to avoid very large projects, instead split them into more **manageable chunks**, where possible. 
+## Author
 
-- Do not write long scripts, instead split them into small scripts - each script "does one thing"
+Remko Duursma <remkoduursma@gmail.com>
 
-- Over time, projects always have the tendency to grow in size. If you archive old work, try to get used to: 
-    + **deleting garbage** code and/or files that have accumulated
-    + **completely starting over**. Sometimes it is best to reorganize your work completely.
-
-- With version control, you have no need to hang on to old code - it can be safely deleted and always found in your *git* history if you are interested.
-
+```
 
 ## Folder structure
 
-To keep raw data separate from scripts, functions, and outputs, a good folder structure is important. Below is an example, but this is of course flexible, and depends on the type of project.  
+When it comes to organizing the various files in your project, you have options.
+But it is important to:
+
+- Keep *code*, *data*, and *outputs* separate at all times. 
+
+A (very!) minimal example:
+
+![](screenshots/folderstructuresmall.png)  
 
 
-![](../screenshots/folderstructuresmall.png)  
-  
-In this simple example, we keep functions and scripts in the `R` folder, the raw data files (normally as CSV) in `rawdata`, and output is sent to the `output` folder. 
-
-The root of the project contains a "master" script that controls the entire workflow, usually calling other scripts or executing custom functions (with arguments).
+In this example, we have a main script (`analysis.R`), which runs the analysis. 
+All other files are collected in sub-folders.
 
 
-## Working with folders
+
+## Working with folders in R
 
 
-Do **not use absolute paths** anywhere to refer to the location of a file (there are rare exceptions to this rule). Instead, use the *working directory* (the project root) as a starting point, and find files with the relative path, for example:
-
-
-```{r, eval=FALSE}
-allom <- read.csv("rawdata/allometry.csv")
-```
-
-and 
+Never use full paths to files, for example:
 
 ```{r, eval=FALSE}
-pdf("output/Figure1.pdf")
-plot(height ~ diameter, data=allom)
-dev.off()
+# Don't do this.
+# It breaks our idea of reproducibility:
+# this folder does not exist on another machine.
+mydata <- read.csv("c:/users/remko/project1/data/bestand1.csv")
 ```
 
+Use the *relative* path to access files:
 
-## Calling other scripts {.smaller}
+```{r, eval=FALSE}
+mydata <- read.csv("rawdata/bestand1.csv")
+```
 
-I like to have a single 'master script', that loads other scripts that do particular bits, like read and clean the raw data, make figures, and fit linear models. This script may look like the following.
+Remember that with **Rstudio projects**, the default working directory is the location of the `myproject.Rproj` file.
 
-```{r eval=FALSE}
+
+## Main script
+
+Break large scripts into many smaller ones, each with its own task.
+Scripts can be called using `source`.
+
+```{r eval=FALSE, class.source ="smaller"}
 # Load packages
-library(gplots)
-library(car)
+source("R/load_packages")
 
-# Load functions
+# Load my custom function definitions.
 source("R/functions.R")
 
-# Read raw data and add new variables
-source("R/readdata.R")
+# Configuration file
+conf <- yaml::read_yaml("passwords.yml")
+
+# Read raw data
+main_data <- read_raw_data(conf)
 
 # Make figures
 source("R/make_figures.R")
 
-# Do stats
+# Fit models
 source("R/linearmodels.R")
 ```
 
+From the command line, you can run an R script with `Rscript somescript.R` !
 
-## Projects in Rstudio
 
-Finally, I strongly recommend using **projects in Rstudio**. 
 
-- When you setup a project, a small file is added to your folder (e.g. `myproject.Rproj`)
-- When you open the project, you start with a clean workspace, in the correct working directory
-- So no more: `setwd()` and `rm(list=ls())` in your scripts
-- This still works when you move the entire folder to a new location
+## Keep your room clean
+
+
+- Delete files you no longer need from your project, perhaps collect them in some backup or archive.
+
+- The idea of a reusable project is to have a *small*, *portable*, project without a history of how things were.
+
+- Using *git*, you can always find files you deleted some time ago:
+
+```
+git log -G lostfunction
+```
+
+Using this command, we find all lines where `lostfunction` occurs. The last time it occurred is when you deleted that line!
+
+
+
+## Modularity: write functions
+
+Which outputs are based on which inputs?
+
+```{r eval=FALSE}
+# Read configuration file
+.conf <- yaml::read_yaml("config.yml")
+
+# Download raw data
+almere_parking_raw <- download_almere_parking_data(.conf)
+
+# Clean data
+almere_parking <- clean_almere_data(almere_parking_raw)
+
+# Make figure 1.
+to.pdf(
+  figure1(data = almere_parking), 
+  filename = "output/figure1.pdf"
+)
+
+```
+
+
+## Functions help to keep memory clean
+
+We wrote this function to read raw data from a database connection:
+
+```{r}
+download_almere_parking_data <- function(conf){
+  
+  passw <- conf$password
+  
+  db <- dbConnect(database = "db.almere.nl",
+                       password = passw)
+  
+  data <- dbReadTable(db, "almere_parking_current")
+  
+  dbDisconnect(db)
+  
+return(data)
+}
+```
+
+
+## Functions help to keep memory clean (2)
+
+
+Now we call this function from another script:
+
+```{r eval=FALSE}
+almere_parking_raw <- download_almere_parking_data(.conf)
+```
+
+Now, the objects `passw`, `db` and `data` are **not** available in the global environment. These objects only exist during function execution.
+
+
+## Functions help to keep memory clean (3)
+
+By not cluttering the global environment with objects we do not need, we avoid:
+
+- **Conflicts** : I use `data` here as a name for a dataset inside a function. This is fine, since it cannot cause problems outside the function.
+- **Leakage** of sensitive information (since we briefly stored the password in the object `passw`)
+- **Excessive memory use** : large objects that we only need briefly won't take up any memory after the function is complete
+
+
+## Use a simple cache for slow steps
+
+- Often one or more steps in an analysis are time-consuming. We rather skip these steps unless we need to re-run them.
+
+- Never use the Rstudio setting `Tools/Global Options/General/Workspace` to automatically load old objects into memory.
+
+- When saving copies for re-use, always use `.rds` files (`saveRDS` / `readRDS`). These are exact copies of the R object.
+
+- A good first step is to write your own basic caching system (next slide).
+
+- Or take a look at `drake`, an advanced but easy to use system to define a workflow, and only re-run steps when needed (see example project).
+
+
+
+## Use a simple cache for slow steps (2)
+
+
+```{r eval = FALSE}
+
+slow_process <- function(){
+  # A slow function, or one that does not always work.
+  # e.g. database access
+}
+
+fn <- "cache/slow_object.rds"
+
+if(!file.exists(fn)){
+  slow_object <- slow_process()
+  saveRDS(slow_object, fn)
+} else {
+  slow_object <- readRDS(fn)
+}
+
+```
+
+A most simple approach. Remove all files from `cache/` if you want to redo the slow step.
+
+
+
+## Save configuration in a separate file
+
+It is often useful to collect settings that a user may want to adjust in a separate configuration file (passwords, colors, figures to include, paths to data, etc.).
+
+I prefer YAML files:
+
+
+```
+database:
+  user: remkoduursma
+  password: 123hello123
+  table: almere_parking
+
+colors:
+  barplot: ["red","green","blue"]
+
+```
+
+
+## Save configuration in a separate file (2)
+
+
+Save this file as e.g. `config.yml`, and read it with:
+
+```
+.conf <- yaml::read_yaml("config.yml")
+```
+
+We now read the settings as a nested list, for example `.conf$database$table`.
+
+
+
+## Name everything (well)
+
+It is really important to name everything carefully, to end up with readable scripts:
+
+**Don't** do this:
+
+- Very general names (`data`, `summary`, `dataset`)
+- Very short names (`d`, `y`, `y2`)
+- Using special characters (use only letters, numbers, and  `_`)
+
+**Do** this:
+
+- For all objects and functions you write, use *snake_case*
+
+`read_almere_parking_data`, `convert_date_to_time`, `to_sql_string`, `figure1`
+
+- Use descriptive names, making clear what the object does or represents.
+
+
+## Name everything (well) (2)
+
+The previous rules are for anything that ends up in the global environment, and is reused in your scripts.
+
+Inside **functions** we have different rules: here it is very advantageous to have very general names (and use conventions).
+
+```{r eval=FALSE}
+append_database_row <- function(data, connection){
+  
+  dbWriteTable(connection, data, append = TRUE)
+  
+}
+```
+
+Because this function is very general, argument names like `data` and `connection` are not just OK - they are preferred. Take a look at built-in functions in R to learn what are typical names for arguments.
+
+
+
+## Use git version control
+
+Basic skills:
+
+1. clone
+2. stage
+3. commit
+4. push
+5. pull
+
+Extra skills:
+
+1. branches
+2. merging conflicts
+
+
+## git branches
+
+![](screenshots/git-branches-merge.png)
+
+
+## git branches
+
+> 1. *branches* are used in all more complex projects with multiple collaborators
+> 2. But, also in projects with a single developer they are very useful!
+> 3. Suppose you are working on your code base, and want to try out some experimental feature, but not break your `master` code (the working version).
+> 4. Make a branch of your code: this is first an exact copy of your `master` "branch".
+> 5. You can now make changes, commit and push as usual. All code changes are kept on your new branch onl.
+> 6. Now, perhaps you want to replace the master code with your `newbranch`:
+
+```
+git checkout master
+git merge newbranch
+```
+
+
+
+
+
+
 
 
 

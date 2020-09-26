@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project management and workflow</title>
+  <title>R Project Management</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -9,7 +9,6 @@
 
 
 
-  <meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,7 +19,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Project management and workflow',
+                title: 'R Project Management',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -93,7 +92,7 @@ slide:not(.current) .plotly.html-widget{
 
 <body style="opacity: 0">
 
-<slides>
+<slides class="layout-widescreen">
 
   <slide class="title-slide segue nobackground">
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
@@ -101,107 +100,301 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">5 March 2020</p>
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>Reproducible research</h2></hgroup><article  id="reproducible-research">
+<style>
+.smaller{
+    font-size: 10px;
+    padding: 2px;
+}
+.mediumsmall{
+  font-size: 15px;
+}
 
-<ol>
-<li>Reproduce your results by <strong>running a script</strong> that contains the entire workflow</li>
-<li>Outputs (figures, processed datasets) are <strong>disposable</strong>, your scripts can always re-produce the output</li>
-<li><strong>Document</strong> everything: how do I reproduce the main results? Are there settings I have to worry about? What dependencies are there?</li>
-<li>Make your code <strong>readable</strong> by organizing it in logical sub-units (as separate scripts, and custom functions)</li>
+</style>
+
+<slide class=""><hgroup><h2>Ten things any <em>good</em> R project should be:</h2></hgroup><article  id="ten-things-any-good-r-project-should-be">
+
+<ol class = 'build'>
+<li><strong>Reproducible</strong> : the analysis can be carried out on another machine / later / by someone else</li>
+<li><strong>Documented</strong>: how do we run the analysis? what are inputs/outputs?</li>
+<li><strong>Well-structured</strong> : main scripts / other code / data / output / settings / documentation</li>
+<li><strong>Clean</strong> : throw away things you don’t need</li>
+<li><strong>Modular</strong> : use functions as much as possible to structure your work, and avoid duplication</li>
+<li><strong>Time-saving</strong> : use a simple cache, or a workflow manager for slow steps</li>
+<li><strong>Configurable</strong> : collect configuration settings in a separate file</li>
+<li><strong>Versioned</strong>: use <em>git</em> version control for every single project (no exceptions)</li>
+<li><strong>Well-named</strong> : use clear <em>names</em> for things (functions, objects, files and folders)</li>
+<li><strong>Small</strong> : often, a single project becomes too large to manage well</li>
 </ol>
 
-<img src='screenshots/reprresearchbook.jpg' title=''/>
+</article></slide><slide class=""><hgroup><h2>Reproducible research</h2></hgroup><article  id="reproducible-research">
 
-</article></slide><slide class=""><hgroup><h2>A few key principles (1)</h2></hgroup><article  id="a-few-key-principles-1">
+<p>A project can be run by another user* on another computer on a different OS</p>
 
-<ul>
-<li><p>Organize code and data in a single folder for each &lsquo;project&rsquo;</p></li>
-<li><p>Do not mix code for separate projects</p></li>
-<li><p>Keep raw (original) data in a sub-folder, and <strong>never modify raw data</strong></p></li>
-<li><p>Do not hang on to a collection of &lsquo;old&rsquo; scripts, commented-out code, bits that don’t work.</p></li>
-<li><p>Use <em>projects</em> in Rstudio to manage files and your workspace</p></li>
-</ul>
+<ol class = 'build'>
+<li><strong>Platform</strong>. Does the project run only on Windows?</li>
+<li><strong>Software</strong> Except R, do we need other software? Beware: some packages have system dependencies (especially on Linux)!</li>
+<li><strong>R Packages</strong>. Did you keep R package dependencies to a minimum? Are all packages hosted on CRAN? Do you need specific versions?</li>
+<li>Do we need passwords or other <strong>configuration</strong> to run the project, not included in version control?</li>
+<li>For advanced usage: strongly consider using <strong>docker</strong> for reproducible projects (<a href='https://ropenscilabs.github.io/r-docker-tutorial/' title=''>see here</a>).</li>
+</ol>
 
-</article></slide><slide class=""><hgroup><h2>A few key principles (2)</h2></hgroup><article  id="a-few-key-principles-2">
+<p>’* <span style="font-size:0.8em;">
+This could be you, in the future</span></p>
 
-<ul>
-<li>Write functions as much as possible</li>
-<li>Keep code that defines functions separate from other code</li>
-<li>Use a logical folder structure to organize files in a project</li>
-</ul>
+</article></slide><slide class=""><hgroup><h2>Documentation</h2></hgroup><article  id="documentation">
 
-<img src='../screenshots/folderstructure.png' title=''/>
+<p>Comments in the code are nice, but also write a <code>README.md</code> for each project:</p>
 
-</article></slide><slide class=""><hgroup><h2>Project size</h2></hgroup><article  id="project-size">
-
-<ul>
-<li><p>Try to avoid very large projects, instead split them into more <strong>manageable chunks</strong>, where possible.</p></li>
-<li><p>Do not write long scripts, instead split them into small scripts - each script &ldquo;does one thing&rdquo;</p></li>
-<li><p>Over time, projects always have the tendency to grow in size. If you archive old work, try to get used to:</p>
-
-<ul>
-<li><strong>deleting garbage</strong> code and/or files that have accumulated</li>
-<li><strong>completely starting over</strong>. Sometimes it is best to reorganize your work completely.</li>
-</ul></li>
-<li><p>With version control, you have no need to hang on to old code - it can be safely deleted and always found in your <em>git</em> history if you are interested.</p></li>
-</ul>
+<img src='screenshots/readmemd.png' title=''/>
 
 </article></slide><slide class=""><hgroup><h2>Folder structure</h2></hgroup><article  id="folder-structure">
 
-<p>To keep raw data separate from scripts, functions, and outputs, a good folder structure is important. Below is an example, but this is of course flexible, and depends on the type of project.</p>
+<p>When it comes to organizing the various files in your project, you have options. But it is important to:</p>
 
-<img src='../screenshots/folderstructuresmall.png' title=''/>
+<ul>
+<li>Keep <em>code</em>, <em>data</em>, and <em>outputs</em> separate at all times.</li>
+</ul>
 
-<p>In this simple example, we keep functions and scripts in the <code>R</code> folder, the raw data files (normally as CSV) in <code>rawdata</code>, and output is sent to the <code>output</code> folder.</p>
+<p>A (very!) minimal example:</p>
 
-<p>The root of the project contains a &ldquo;master&rdquo; script that controls the entire workflow, usually calling other scripts or executing custom functions (with arguments).</p>
+<img src='screenshots/folderstructuresmall.png' title=''/>
 
-</article></slide><slide class=""><hgroup><h2>Working with folders</h2></hgroup><article  id="working-with-folders">
+<p>In this example, we have a main script (<code>analysis.R</code>), which runs the analysis. All other files are collected in sub-folders.</p>
 
-<p>Do <strong>not use absolute paths</strong> anywhere to refer to the location of a file (there are rare exceptions to this rule). Instead, use the <em>working directory</em> (the project root) as a starting point, and find files with the relative path, for example:</p>
+</article></slide><slide class=""><hgroup><h2>Working with folders in R</h2></hgroup><article  id="working-with-folders-in-r">
 
-<pre class = 'prettyprint lang-r'>allom &lt;- read.csv(&quot;rawdata/allometry.csv&quot;)</pre>
+<p>Never use full paths to files, for example:</p>
 
-<p>and</p>
+<pre class = 'prettyprint lang-r'># Don&#39;t do this.
+# It breaks our idea of reproducibility:
+# this folder does not exist on another machine.
+mydata &lt;- read.csv(&quot;c:/users/remko/project1/data/bestand1.csv&quot;)</pre>
 
-<pre class = 'prettyprint lang-r'>pdf(&quot;output/Figure1.pdf&quot;)
-plot(height ~ diameter, data=allom)
-dev.off()</pre>
+<p>Use the <em>relative</em> path to access files:</p>
 
-</article></slide><slide class=""><hgroup><h2>Calling other scripts</h2></hgroup><article  id="calling-other-scripts" class="smaller">
+<pre class = 'prettyprint lang-r'>mydata &lt;- read.csv(&quot;rawdata/bestand1.csv&quot;)</pre>
 
-<p>I like to have a single &lsquo;master script&rsquo;, that loads other scripts that do particular bits, like read and clean the raw data, make figures, and fit linear models. This script may look like the following.</p>
+<p>Remember that with <strong>Rstudio projects</strong>, the default working directory is the location of the <code>myproject.Rproj</code> file.</p>
 
-<pre class = 'prettyprint lang-r'># Load packages
-library(gplots)
-library(car)
+</article></slide><slide class=""><hgroup><h2>Main script</h2></hgroup><article  id="main-script">
 
-# Load functions
+<p>Break large scripts into many smaller ones, each with its own task. Scripts can be called using <code>source</code>.</p>
+
+<pre class = 'prettyprint lang-r smaller'># Load packages
+source(&quot;R/load_packages&quot;)
+
+# Load my custom function definitions.
 source(&quot;R/functions.R&quot;)
 
-# Read raw data and add new variables
-source(&quot;R/readdata.R&quot;)
+# Configuration file
+conf &lt;- yaml::read_yaml(&quot;passwords.yml&quot;)
+
+# Read raw data
+main_data &lt;- read_raw_data(conf)
 
 # Make figures
 source(&quot;R/make_figures.R&quot;)
 
-# Do stats
+# Fit models
 source(&quot;R/linearmodels.R&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Projects in Rstudio</h2></hgroup><article  id="projects-in-rstudio">
+<p>From the command line, you can run an R script with <code>Rscript somescript.R</code> !</p>
 
-<p>Finally, I strongly recommend using <strong>projects in Rstudio</strong>.</p>
+</article></slide><slide class=""><hgroup><h2>Keep your room clean</h2></hgroup><article  id="keep-your-room-clean">
 
 <ul>
-<li>When you setup a project, a small file is added to your folder (e.g. <code>myproject.Rproj</code>)</li>
-<li>When you open the project, you start with a clean workspace, in the correct working directory</li>
-<li>So no more: <code>setwd()</code> and <code>rm(list=ls())</code> in your scripts</li>
-<li>This still works when you move the entire folder to a new location</li>
-</ul></article></slide>
+<li><p>Delete files you no longer need from your project, perhaps collect them in some backup or archive.</p></li>
+<li><p>The idea of a reusable project is to have a <em>small</em>, <em>portable</em>, project without a history of how things were.</p></li>
+<li><p>Using <em>git</em>, you can always find files you deleted some time ago:</p></li>
+</ul>
+
+<pre >git log -G lostfunction</pre>
+
+<p>Using this command, we find all lines where <code>lostfunction</code> occurs. The last time it occurred is when you deleted that line!</p>
+
+</article></slide><slide class=""><hgroup><h2>Modularity: write functions</h2></hgroup><article  id="modularity-write-functions">
+
+<p>Which outputs are based on which inputs?</p>
+
+<pre class = 'prettyprint lang-r'># Read configuration file
+.conf &lt;- yaml::read_yaml(&quot;config.yml&quot;)
+
+# Download raw data
+almere_parking_raw &lt;- download_almere_parking_data(.conf)
+
+# Clean data
+almere_parking &lt;- clean_almere_data(almere_parking_raw)
+
+# Make figure 1.
+to.pdf(
+  figure1(data = almere_parking), 
+  filename = &quot;output/figure1.pdf&quot;
+)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Functions help to keep memory clean</h2></hgroup><article  id="functions-help-to-keep-memory-clean">
+
+<p>We wrote this function to read raw data from a database connection:</p>
+
+<pre class = 'prettyprint lang-r'>download_almere_parking_data &lt;- function(conf){
+  
+  passw &lt;- conf$password
+  
+  db &lt;- dbConnect(database = &quot;db.almere.nl&quot;,
+                       password = passw)
+  
+  data &lt;- dbReadTable(db, &quot;almere_parking_current&quot;)
+  
+  dbDisconnect(db)
+  
+return(data)
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Functions help to keep memory clean (2)</h2></hgroup><article  id="functions-help-to-keep-memory-clean-2">
+
+<p>Now we call this function from another script:</p>
+
+<pre class = 'prettyprint lang-r'>almere_parking_raw &lt;- download_almere_parking_data(.conf)</pre>
+
+<p>Now, the objects <code>passw</code>, <code>db</code> and <code>data</code> are <strong>not</strong> available in the global environment. These objects only exist during function execution.</p>
+
+</article></slide><slide class=""><hgroup><h2>Functions help to keep memory clean (3)</h2></hgroup><article  id="functions-help-to-keep-memory-clean-3">
+
+<p>By not cluttering the global environment with objects we do not need, we avoid:</p>
+
+<ul>
+<li><strong>Conflicts</strong> : I use <code>data</code> here as a name for a dataset inside a function. This is fine, since it cannot cause problems outside the function.</li>
+<li><strong>Leakage</strong> of sensitive information (since we briefly stored the password in the object <code>passw</code>)</li>
+<li><strong>Excessive memory use</strong> : large objects that we only need briefly won’t take up any memory after the function is complete</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Use a simple cache for slow steps</h2></hgroup><article  id="use-a-simple-cache-for-slow-steps">
+
+<ul>
+<li><p>Often one or more steps in an analysis are time-consuming. We rather skip these steps unless we need to re-run them.</p></li>
+<li><p>Never use the Rstudio setting <code>Tools/Global Options/General/Workspace</code> to automatically load old objects into memory.</p></li>
+<li><p>When saving copies for re-use, always use <code>.rds</code> files (<code>saveRDS</code> / <code>readRDS</code>). These are exact copies of the R object.</p></li>
+<li><p>A good first step is to write your own basic caching system (next slide).</p></li>
+<li><p>Or take a look at <code>drake</code>, an advanced but easy to use system to define a workflow, and only re-run steps when needed (see example project).</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Use a simple cache for slow steps (2)</h2></hgroup><article  id="use-a-simple-cache-for-slow-steps-2">
+
+<pre class = 'prettyprint lang-r'>slow_process &lt;- function(){
+  # A slow function, or one that does not always work.
+  # e.g. database access
+}
+
+fn &lt;- &quot;cache/slow_object.rds&quot;
+
+if(!file.exists(fn)){
+  slow_object &lt;- slow_process()
+  saveRDS(slow_object, fn)
+} else {
+  slow_object &lt;- readRDS(fn)
+}</pre>
+
+<p>A most simple approach. Remove all files from <code>cache/</code> if you want to redo the slow step.</p>
+
+</article></slide><slide class=""><hgroup><h2>Save configuration in a separate file</h2></hgroup><article  id="save-configuration-in-a-separate-file">
+
+<p>It is often useful to collect settings that a user may want to adjust in a separate configuration file (passwords, colors, figures to include, paths to data, etc.).</p>
+
+<p>I prefer YAML files:</p>
+
+<pre >database:
+  user: remkoduursma
+  password: 123hello123
+  table: almere_parking
+
+colors:
+  barplot: [&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;]
+</pre>
+
+</article></slide><slide class=""><hgroup><h2>Save configuration in a separate file (2)</h2></hgroup><article  id="save-configuration-in-a-separate-file-2">
+
+<p>Save this file as e.g. <code>config.yml</code>, and read it with:</p>
+
+<pre >.conf &lt;- yaml::read_yaml(&quot;config.yml&quot;)</pre>
+
+<p>We now read the settings as a nested list, for example <code>.conf$database$table</code>.</p>
+
+</article></slide><slide class=""><hgroup><h2>Name everything (well)</h2></hgroup><article  id="name-everything-well">
+
+<p>It is really important to name everything carefully, to end up with readable scripts:</p>
+
+<p><strong>Don’t</strong> do this:</p>
+
+<ul>
+<li>Very general names (<code>data</code>, <code>summary</code>, <code>dataset</code>)</li>
+<li>Very short names (<code>d</code>, <code>y</code>, <code>y2</code>)</li>
+<li>Using special characters (use only letters, numbers, and <code>_</code>)</li>
+</ul>
+
+<p><strong>Do</strong> this:</p>
+
+<ul>
+<li>For all objects and functions you write, use <em>snake_case</em></li>
+</ul>
+
+<p><code>read_almere_parking_data</code>, <code>convert_date_to_time</code>, <code>to_sql_string</code>, <code>figure1</code></p>
+
+<ul>
+<li>Use descriptive names, making clear what the object does or represents.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Name everything (well) (2)</h2></hgroup><article  id="name-everything-well-2">
+
+<p>The previous rules are for anything that ends up in the global environment, and is reused in your scripts.</p>
+
+<p>Inside <strong>functions</strong> we have different rules: here it is very advantageous to have very general names (and use conventions).</p>
+
+<pre class = 'prettyprint lang-r'>append_database_row &lt;- function(data, connection){
+  
+  dbWriteTable(connection, data, append = TRUE)
+  
+}</pre>
+
+<p>Because this function is very general, argument names like <code>data</code> and <code>connection</code> are not just OK - they are preferred. Take a look at built-in functions in R to learn what are typical names for arguments.</p>
+
+</article></slide><slide class=""><hgroup><h2>Use git version control</h2></hgroup><article  id="use-git-version-control">
+
+<p>Basic skills:</p>
+
+<ol>
+<li>clone</li>
+<li>stage</li>
+<li>commit</li>
+<li>push</li>
+<li>pull</li>
+</ol>
+
+<p>Extra skills:</p>
+
+<ol>
+<li>branches</li>
+<li>merging conflicts</li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>git branches</h2></hgroup><article  id="git-branches">
+
+<img src='screenshots/git-branches-merge.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>git branches</h2></hgroup><article  id="git-branches-1">
+
+<ol class = 'build'>
+<li><em>branches</em> are used in all more complex projects with multiple collaborators</li>
+<li>But, also in projects with a single developer they are very useful!</li>
+<li>Suppose you are working on your code base, and want to try out some experimental feature, but not break your <code>master</code> code (the working version).</li>
+<li>Make a branch of your code: this is first an exact copy of your <code>master</code> &ldquo;branch&rdquo;.</li>
+<li>You can now make changes, commit and push as usual. All code changes are kept on your new branch onl.</li>
+<li>Now, perhaps you want to replace the master code with your <code>newbranch</code>:</li>
+</ol>
+
+<pre >git checkout master
+git merge newbranch</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

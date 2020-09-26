@@ -6,7 +6,7 @@ output:
 ---
 
 
-# R en Rstudio
+# R & Rstudio
 
 - [CRAN (Download R)](https://cran.rstudio.com/)
 - [Rstudio Download](https://www.rstudio.com/products/rstudio/download/)

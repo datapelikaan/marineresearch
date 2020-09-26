@@ -1,0 +1,18 @@
+general:
+  cache: true
+
+database:
+  dbhost: ds229186.mlab.com:29186
+  user: remko
+  password: playpass123
+  table: almereparking
+
+  
+model:
+  execute: true
+  version: 1
+
+figures:
+  barplot:
+    colors: ["blue","red"]
+

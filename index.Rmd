@@ -1,45 +1,41 @@
 ---
-title: "Workshop: Programming Skills in R"
+title: "R Workshop : Marine Research"
 output:
   html_document:
     toc: false
 ---
 
 
-This temporary website accompanies the workshop at *WUR Marine Research*, 5 and 19 March 2020.
+This website accompanies the online workshop for *WUR Marine Research*, Sept. 2020.
+
+
+#### Project management
+
+In this presentation, I summarize and illustrate ten properties of "good" R projects.
+
+[Slides on project management & workflow (HTML)](02_workflowtalk.html)</span>
+
+
+#### Example Project
+
+Take a look at an example project which demonstrates many of the concepts in the presentation on project management. 
+
+[Example Project on Github](https://github.com/RemkoDuursma/almereparking)
+
+Not included in the repository is a configuration file ([download it here](data/config.yml)), it needs to be placed in a subdirectory `conf/` in the project (the project runs without it though).
+
+
+#### Writing functions
+
+To follow in the next workshop.
 
 
 
-### Workshop materials
+#### Reading
 
-For this course we follow selected chapters from :
+More background reading on project management, git version control, R package management, programming, and many other topics:
 
 <span style="font-size: 1.4em">[A Learning Guide to R](https://remkoduursma.github.io/learningguidetor)</span>
 
 by [Remko Duursma](https://www.remkoduursma.com)
-
-Depending on interest in the group and time, I will demonstrate selected sections from the following chapters:
-
-- [Chapter 4 : R Programming: Lists, Functions, and Loops](https://remkoduursma.github.io/learningguidetor/programming.html)
-- [Chapter 6 : Version control with git and Rstudio](https://remkoduursma.github.io/learningguidetor/versioncontrol.html)
-- [Chapter 7 : R Project management](https://remkoduursma.github.io/learningguidetor/projectman.html)
-- [Chapter 8 : Mastering R Package Dependencies](https://remkoduursma.github.io/learningguidetor/rpackages.html)
-
-Feel free to browse the rest of the book.
-
-The **printable** version of the book can be found via a PDF icon link in the online book.
-
-Solutions to the exercises (though I expect you will be working on your own project) [can be found here](compiled_html/lgr_exercises.html).
-
-#### Example Project
-
-I will demonstrate some key concepts in an example project shared with me by Floor Soudijn. We also will use the project to practice collaborating via *git* version control. 
-
-The repository is available here (it will only be publicly available during the course):
-
-[https://bitbucket.org/soudijn/rcourseaalcode]()
-
-
-
-
 
