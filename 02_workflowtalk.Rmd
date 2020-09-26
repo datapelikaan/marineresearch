@@ -124,7 +124,7 @@ Remember that with **Rstudio projects**, the default working directory is the lo
 Break large scripts into many smaller ones, each with its own task.
 Scripts can be called using `source`.
 
-```{r eval=FALSE, class.source ="smaller"}
+```{r eval=FALSE}
 # Load packages
 source("R/load_packages")
 
@@ -139,9 +139,6 @@ main_data <- read_raw_data(conf)
 
 # Make figures
 source("R/make_figures.R")
-
-# Fit models
-source("R/linearmodels.R")
 ```
 
 From the command line, you can run an R script with `Rscript somescript.R` !
@@ -366,13 +363,7 @@ Extra skills:
 > 3. Suppose you are working on your code base, and want to try out some experimental feature, but not break your `master` code (the working version).
 > 4. Make a branch of your code: this is first an exact copy of your `master` "branch".
 > 5. You can now make changes, commit and push as usual. All code changes are kept on your new branch onl.
-> 6. Now, perhaps you want to replace the master code with your `newbranch`:
-
-```
-git checkout master
-git merge newbranch
-```
-
+> 6. Now, perhaps you want to replace the master code with your `newbranch`.
 
 
 

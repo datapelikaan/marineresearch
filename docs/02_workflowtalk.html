@@ -183,7 +183,7 @@ mydata &lt;- read.csv(&quot;c:/users/remko/project1/data/bestand1.csv&quot;)</pr
 
 <p>Break large scripts into many smaller ones, each with its own task. Scripts can be called using <code>source</code>.</p>
 
-<pre class = 'prettyprint lang-r smaller'># Load packages
+<pre class = 'prettyprint lang-r'># Load packages
 source(&quot;R/load_packages&quot;)
 
 # Load my custom function definitions.
@@ -196,10 +196,7 @@ conf &lt;- yaml::read_yaml(&quot;passwords.yml&quot;)
 main_data &lt;- read_raw_data(conf)
 
 # Make figures
-source(&quot;R/make_figures.R&quot;)
-
-# Fit models
-source(&quot;R/linearmodels.R&quot;)</pre>
+source(&quot;R/make_figures.R&quot;)</pre>
 
 <p>From the command line, you can run an R script with <code>Rscript somescript.R</code> !</p>
 
@@ -390,11 +387,8 @@ colors:
 <li>Suppose you are working on your code base, and want to try out some experimental feature, but not break your <code>master</code> code (the working version).</li>
 <li>Make a branch of your code: this is first an exact copy of your <code>master</code> &ldquo;branch&rdquo;.</li>
 <li>You can now make changes, commit and push as usual. All code changes are kept on your new branch onl.</li>
-<li>Now, perhaps you want to replace the master code with your <code>newbranch</code>:</li>
-</ol>
-
-<pre >git checkout master
-git merge newbranch</pre></article></slide>
+<li>Now, perhaps you want to replace the master code with your <code>newbranch</code>.</li>
+</ol></article></slide>
 
 
   <slide class="backdrop"></slide>
