@@ -1,0 +1,25 @@
+---
+title: "R Project Management"
+author: Remko Duursma
+output: 
+  ioslides_presentation:
+    widescreen: true
+---
+
+<style>
+.smaller{
+	font-size: 10px;
+	padding: 2px;
+}
+.mediumsmall{
+  font-size: 15px;
+}
+
+</style>
+
+
+
+
+
+
+## Ten things any *good* R project should be:
