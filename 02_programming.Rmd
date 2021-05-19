@@ -1,5 +1,5 @@
 ---
-title: "R Project Management"
+title: "Programmer's skills"
 author: Remko Duursma
 output: 
   ioslides_presentation:
@@ -20,6 +20,93 @@ output:
 
 
 
+## Important basic skills for the R programmer
+
+- Use Rstudio projects to manage your work
+- Some Rstudio basic tips & tricks
+- Make your code readable: format your code / write comments
+- Name things well
+- Organize your files into a logical folder structure
+- Managing R package dependencies
 
 
-## Ten things any *good* R project should be:
+
+## Rstudio projects
+
+
+- A typical 'project' consists of many related files in a directory
+- To run your code in this directory, you will typically have done:
+
+```
+setwd("c:/users/remkoduursma/projects/importantproject1")
+```
+
+- **Problem** : your code will not work on another computer!
+
+- **Solution** : Rstudio projects
+
+See [Section 1.9](https://remkoduursma.github.io/learningguidetor/intro.html#rstudio-projects)
+
+
+
+## Rstudio basic tips & tricks
+
+- See important 'Settings' in [Section 1.1](https://remkoduursma.github.io/learningguidetor/intro.html#installingr)
+
+- Finding code
+- [Keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+
+
+
+
+## Make your code readable
+
+- demo
+
+## Name everything (well)
+
+It is really important to name everything carefully, to end up with readable scripts:
+
+**Don't** do this:
+
+- Very general names (`data`, `summary`, `dataset`)
+- Very short names (`d`, `y`, `y2`)
+- Using special characters (use only letters, numbers, and  `_`)
+
+**Do** this:
+
+- For all objects and functions you write, use *snake_case*
+
+`read_almere_parking_data`, `convert_date_to_time`, `to_sql_string`, `figure1`
+
+- Use descriptive names, making clear what the object does or represents.
+
+
+
+## Folder structure
+
+When it comes to organizing the various files in your project, you have options.
+But it is important to:
+
+- Keep *code*, *data*, and *outputs* separate at all times. 
+
+A (very!) minimal example:
+
+![](screenshots/folderstructuresmall.png)  
+
+
+In this example, we have a main script (`analysis.R`), which runs the analysis. 
+All other files are collected in sub-folders.
+
+
+
+
+## Managing R package dependencies
+
+
+- see [Chapter 8](https://remkoduursma.github.io/learningguidetor/masteringpackages.html) in a Learning Guide to R.
+
+
+
+
+

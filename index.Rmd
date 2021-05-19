@@ -6,14 +6,36 @@ output:
 ---
 
 
-This website accompanies the online workshop for *WUR Marine Research*, Sept. 2020.
+This website accompanies the online workshop for *WUR Marine Research*, May/June 2021.
+
+
+### Training 1
+
+[Contents](01_intro_01.html)
+
+#### Programmer's skills
+
+In this presentation, I illustrate a number of basic and must-know skills for the better R programmers.
+
+[Slides on Programmer's skills](02_programming.html)
+
+
+#### Version control with git
+
+Use git version control to perfectly track the history of your code, and avoid problems.
+
+
+[Slides on intro to git](03_versioncontrol.html)
+
+
+
 
 
 #### Project management
 
 In this presentation, I summarize and illustrate ten properties of "good" R projects.
 
-[Slides on project management & workflow (HTML)](02_workflowtalk.html)</span>
+(slides to follow)
 
 
 #### Example Project
@@ -25,9 +47,7 @@ Take a look at an example project which demonstrates many of the concepts in the
 Not included in the repository is a configuration file ([download it here](data/config.yml)), it needs to be placed in a subdirectory `conf/` in the project (the project runs without it though).
 
 
-#### Writing functions
 
-To follow in the next workshop.
 
 
 

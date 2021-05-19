@@ -1,0 +1,62 @@
+---
+title: "Training: R & Rstudio Advanced"
+subtitle: "Marine Research 2021"
+author: "Remko Duursma"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, css/custom.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+
+# Today
+
+.pull-left[
+
+## 9:30 - 11:30
+
+- .large[R Programmer's skills]
+- .large[Rstudio tips & tricks, Rstudio projects]
+- .large[Introduction to *git* version control]
+- .large[Questions, Discussion, Homework]
+]
+
+.pull-right[
+
+  ![](images/trainschedule.png)
+]
+
+---
+
+# Next 
+
+.pull-left[
+
+## Training 2
+
+- .large[Project management / advanced programming skills]
+- .large[Advanced *git* version control (command line, branches, issues)]
+
+## Training 3
+
+- .large[Writing (better) functions]
+
+]
+
+.pull-right[
+
+  ![](images/trainschedule.png)
+]
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 ---
 title: "Training: R & Rstudio Advanced"
-subtitle: "Marine Research 2020"
+subtitle: "Marine Research 2021"
 author: "Remko Duursma"
 date: "`r Sys.Date()`"
 output:
