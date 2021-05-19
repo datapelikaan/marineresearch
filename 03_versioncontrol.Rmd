@@ -97,6 +97,9 @@ git repositories are **always local**, and optionally you can sync with a remote
 - https://git-scm.com/downloads
 
 
+### Demonstration
+
+- I will show installing git, connecting to bitbucket, and the basic workflow from Rstudio.
 
 
 

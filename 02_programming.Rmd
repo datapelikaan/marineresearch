@@ -24,8 +24,8 @@ output:
 
 - Use Rstudio projects to manage your work
 - Some Rstudio basic tips & tricks
-- Make your code readable: format your code / write comments
 - Name things well
+- Make your code readable: format your code / write comments
 - Organize your files into a logical folder structure
 - Managing R package dependencies
 
@@ -58,11 +58,6 @@ See [Section 1.9](https://remkoduursma.github.io/learningguidetor/intro.html#rst
 
 
 
-
-## Make your code readable
-
-- demo
-
 ## Name everything (well)
 
 It is really important to name everything carefully, to end up with readable scripts:
@@ -83,6 +78,16 @@ It is really important to name everything carefully, to end up with readable scr
 
 
 
+## Make your code readable
+
+
+- Rstudio: Code/Reformat code
+- Much better: the `styler` package. [See here](https://styler.r-lib.org/)
+
+- Demo
+
+
+
 ## Folder structure
 
 When it comes to organizing the various files in your project, you have options.
@@ -98,6 +103,28 @@ A (very!) minimal example:
 In this example, we have a main script (`analysis.R`), which runs the analysis. 
 All other files are collected in sub-folders.
 
+More reading: [Chapter 7](https://remkoduursma.github.io/learningguidetor/projectman.html)
+
+
+## Working with folders in R
+
+
+Never use full paths to files, for example:
+
+```{r, eval=FALSE}
+# Don't do this.
+# It breaks our idea of reproducibility:
+# this folder does not exist on another machine.
+mydata <- read.csv("c:/users/remko/project1/data/bestand1.csv")
+```
+
+Use the *relative* path to access files:
+
+```{r, eval=FALSE}
+mydata <- read.csv("rawdata/bestand1.csv")
+```
+
+Remember that with **Rstudio projects**, the default working directory is the location of the `myproject.Rproj` file.
 
 
 

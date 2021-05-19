@@ -8,19 +8,22 @@ output:
 
 This website accompanies the online workshop for *WUR Marine Research*, May/June 2021.
 
+<br>
 
-### Training 1
+<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
 
-[Contents](01_intro_01.html)
+<div style="width:100%; height:35px;">
+<span style="float: right;font-size: 1.45em;">Training 1</span>
+</div>
 
-#### Programmer's skills
+### Programmer's skills
 
 In this presentation, I illustrate a number of basic and must-know skills for the better R programmers.
 
 [Slides on Programmer's skills](02_programming.html)
 
 
-#### Version control with git
+### Version control with git
 
 Use git version control to perfectly track the history of your code, and avoid problems.
 
@@ -28,17 +31,30 @@ Use git version control to perfectly track the history of your code, and avoid p
 [Slides on intro to git](03_versioncontrol.html)
 
 
+#### Video
+
+To follow.
 
 
+</div>
 
-#### Project management
+<br>
+
+
+<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
+
+<div style="width:100%; height:35px;">
+<span style="float: right;font-size: 1.45em;">Training 2</span>
+</div>
+
+### Project management
 
 In this presentation, I summarize and illustrate ten properties of "good" R projects.
 
 (slides to follow)
 
 
-#### Example Project
+### Example Project
 
 Take a look at an example project which demonstrates many of the concepts in the presentation on project management. 
 
@@ -46,16 +62,41 @@ Take a look at an example project which demonstrates many of the concepts in the
 
 Not included in the repository is a configuration file ([download it here](data/config.yml)), it needs to be placed in a subdirectory `conf/` in the project (the project runs without it though).
 
+#### Video
+
+To follow.
 
 
+</div>
+
+<br>
+
+<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
+<div style="width:100%; height:35px;">
+<span style="float: right;font-size: 1.45em;">Training 3</span>
+</div>
+
+### Writing functions
+
+In this training I will demonstrate writing functions, to improve organization, readability, reproducability, and reusability.
 
 
+#### Video
 
-#### Reading
+To follow
+
+
+</div>
+
+<br>
+
+
+<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
+## Reading
 
 More background reading on project management, git version control, R package management, programming, and many other topics:
 
 <span style="font-size: 1.4em">[A Learning Guide to R](https://remkoduursma.github.io/learningguidetor)</span>
 
 by [Remko Duursma](https://www.remkoduursma.com)
-
+</div>
