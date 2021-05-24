@@ -33,7 +33,12 @@ Use git version control to perfectly track the history of your code, and avoid p
 
 #### Video
 
-To follow.
+Edited recording of the first training (1:45).
+
+[Link to Youtube video](https://youtu.be/xcMrQQ6EDDg)
+
+The video is unlisted (it will not appear in search results). Please do not share publicly.
+
 
 
 </div>
