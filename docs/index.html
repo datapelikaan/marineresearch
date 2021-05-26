@@ -57,6 +57,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -266,21 +267,23 @@ $(document).ready(function () {
 
 <p>This website accompanies the online workshop for <em>WUR Marine Research</em>, May/June 2021.</p>
 <p><br></p>
-<div style="padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-<div style="width:100%; height:35px;">
-<p><span style="float: right;font-size: 1.45em;">Training 1</span></p>
+<div class="training-card">
+<div class="training-label">
+<p><span>Training 1</span></p>
 </div>
-<div id="programmers-skills" class="section level3">
-<h3>Programmer’s skills</h3>
+<div id="programmers-skills" class="section level2">
+<h2>Programmer’s skills</h2>
 <p>In this presentation, I illustrate a number of basic and must-know skills for the better R programmers.</p>
 <p><a href="02_programming.html">Slides on Programmer’s skills</a></p>
+<p>See also <a href="https://remkoduursma.github.io/learningguidetor/intro.html">Chapter 1 in A Learning Guide to R</a> for some of the topics, and <a href="https://remkoduursma.github.io/learningguidetor/masteringpackages.html">Chapter 7</a> for R package management.</p>
 </div>
-<div id="version-control-with-git" class="section level3">
-<h3>Version control with git</h3>
+<div id="version-control-with-git" class="section level2">
+<h2>Version control with git</h2>
 <p>Use git version control to perfectly track the history of your code, and avoid problems.</p>
 <p><a href="03_versioncontrol.html">Slides on intro to git</a></p>
-<div id="video" class="section level4">
-<h4>Video</h4>
+<p>See also <a href="https://remkoduursma.github.io/learningguidetor/versioncontrol.html">Chapter 5 : Version control with git</a>.</p>
+<div id="video" class="section level3">
+<h3>Video</h3>
 <p>Edited recording of the first training (1:45).</p>
 <p><a href="https://youtu.be/xcMrQQ6EDDg">Link to Youtube video</a></p>
 <p>The video is unlisted (it will not appear in search results). Please do not share publicly.</p>
@@ -288,42 +291,44 @@ $(document).ready(function () {
 </div>
 </div>
 <p><br></p>
-<div style="padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-<div style="width:100%; height:35px;">
-<p><span style="float: right;font-size: 1.45em;">Training 2</span></p>
+<div class="training-card">
+<div class="training-label">
+<p><span>Training 2</span></p>
 </div>
-<div id="project-management" class="section level3">
-<h3>Project management</h3>
+<div id="project-management" class="section level2">
+<h2>Project management</h2>
 <p>In this presentation, I summarize and illustrate ten properties of “good” R projects.</p>
-<p>(slides to follow)</p>
-</div>
+<p><a href="04_workflowtalk.html">Slides on Project management</a></p>
+<p>See also <a href="https://remkoduursma.github.io/learningguidetor/projectman.html">Chapter 6 : Project management and workflow</a>.</p>
 <div id="example-project" class="section level3">
 <h3>Example Project</h3>
 <p>Take a look at an example project which demonstrates many of the concepts in the presentation on project management.</p>
 <p><a href="https://github.com/RemkoDuursma/almereparking">Example Project on Github</a></p>
 <p>Not included in the repository is a configuration file (<a href="data/config.yml">download it here</a>), it needs to be placed in a subdirectory <code>conf/</code> in the project (the project runs without it though).</p>
-<div id="video-1" class="section level4">
-<h4>Video</h4>
+</div>
+<div id="video-1" class="section level3">
+<h3>Video</h3>
 <p>To follow.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-<div style="padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-<div style="width:100%; height:35px;">
-<p><span style="float: right;font-size: 1.45em;">Training 3</span></p>
+<div class="training-card">
+<div class="training-label">
+<p><span>Training 3</span></p>
 </div>
-<div id="writing-functions" class="section level3">
-<h3>Writing functions</h3>
+<div id="writing-functions" class="section level2">
+<h2>Writing functions</h2>
 <p>In this training I will demonstrate writing functions, to improve organization, readability, reproducability, and reusability.</p>
-<div id="video-2" class="section level4">
-<h4>Video</h4>
+<p>See also <a href="https://remkoduursma.github.io/learningguidetor/programming.html">Chapter 4 : Functions, lists and loops</a>.</p>
+<div id="video-2" class="section level3">
+<h3>Video</h3>
 <p>To follow</p>
 </div>
 </div>
 </div>
 <p><br></p>
-<div id="reading" class="section level2" style="padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+<div id="reading" class="section level2 training-card">
 <h2>Reading</h2>
 <p>More background reading on project management, git version control, R package management, programming, and many other topics:</p>
 <p><span style="font-size: 1.4em"><a href="https://remkoduursma.github.io/learningguidetor">A Learning Guide to R</a></span></p>

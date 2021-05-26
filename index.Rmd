@@ -2,6 +2,7 @@
 title: "R Workshop : Marine Research"
 output:
   html_document:
+    css: "style.css"
     toc: false
 ---
 
@@ -10,28 +11,33 @@ This website accompanies the online workshop for *WUR Marine Research*, May/June
 
 <br>
 
-<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
 
-<div style="width:100%; height:35px;">
-<span style="float: right;font-size: 1.45em;">Training 1</span>
+
+<div class = "training-card">
+
+<div class = "training-label">
+<span>Training 1</span>
 </div>
 
-### Programmer's skills
+
+## Programmer's skills
 
 In this presentation, I illustrate a number of basic and must-know skills for the better R programmers.
 
 [Slides on Programmer's skills](02_programming.html)
 
+See also [Chapter 1 in A Learning Guide to R](https://remkoduursma.github.io/learningguidetor/intro.html) for some of the topics, and [Chapter 7](https://remkoduursma.github.io/learningguidetor/masteringpackages.html) for R package management.
 
-### Version control with git
+## Version control with git
 
 Use git version control to perfectly track the history of your code, and avoid problems.
 
 
 [Slides on intro to git](03_versioncontrol.html)
 
+See also [Chapter 5 : Version control with git](https://remkoduursma.github.io/learningguidetor/versioncontrol.html).
 
-#### Video
+### Video
 
 Edited recording of the first training (1:45).
 
@@ -46,18 +52,22 @@ The video is unlisted (it will not appear in search results). Please do not shar
 <br>
 
 
-<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
+<div class = "training-card">
 
-<div style="width:100%; height:35px;">
-<span style="float: right;font-size: 1.45em;">Training 2</span>
+<div class = "training-label">
+<span>Training 2</span>
 </div>
 
-### Project management
+
+
+
+## Project management
 
 In this presentation, I summarize and illustrate ten properties of "good" R projects.
 
-(slides to follow)
+[Slides on Project management](04_workflowtalk.html)
 
+See also [Chapter 6 : Project management and workflow](https://remkoduursma.github.io/learningguidetor/projectman.html).
 
 ### Example Project
 
@@ -67,7 +77,7 @@ Take a look at an example project which demonstrates many of the concepts in the
 
 Not included in the repository is a configuration file ([download it here](data/config.yml)), it needs to be placed in a subdirectory `conf/` in the project (the project runs without it though).
 
-#### Video
+### Video
 
 To follow.
 
@@ -76,17 +86,18 @@ To follow.
 
 <br>
 
-<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
-<div style="width:100%; height:35px;">
-<span style="float: right;font-size: 1.45em;">Training 3</span>
+<div class = "training-card">
+<div class = "training-label">
+<span>Training 3</span>
 </div>
 
-### Writing functions
+## Writing functions
 
 In this training I will demonstrate writing functions, to improve organization, readability, reproducability, and reusability.
 
+See also [Chapter 4 : Functions, lists and loops](https://remkoduursma.github.io/learningguidetor/programming.html).
 
-#### Video
+### Video
 
 To follow
 
@@ -96,7 +107,9 @@ To follow
 <br>
 
 
-<div style='padding: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'>
+
+
+<div class = "training-card">
 ## Reading
 
 More background reading on project management, git version control, R package management, programming, and many other topics:
