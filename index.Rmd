@@ -61,6 +61,7 @@ The video is unlisted (it will not appear in search results). Please do not shar
 
 
 
+
 ## Project management
 
 In this presentation, I summarize and illustrate ten properties of "good" R projects.
@@ -79,7 +80,12 @@ Not included in the repository is a configuration file ([download it here](data/
 
 ### Video
 
-To follow.
+Edited recording of the second training (1:36).
+
+[Link to Youtube video](https://youtu.be/xcMrQQ6EDDg)
+
+- Version control: collaborating, command line
+- Project management: ten important ideas
 
 
 </div>
