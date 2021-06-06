@@ -39,7 +39,7 @@ See also [Chapter 5 : Version control with git](https://remkoduursma.github.io/l
 
 ### Video
 
-Edited recording of the first training (1:45).
+Edited recording of the first training (1h45m).
 
 [Link to Youtube video](https://youtu.be/xcMrQQ6EDDg)
 
@@ -80,7 +80,7 @@ Not included in the repository is a configuration file ([download it here](data/
 
 ### Video
 
-Edited recording of the second training (1:36).
+Edited recording of the second training (1h36m).
 
 [Link to Youtube video](https://youtu.be/xcMrQQ6EDDg)
 
@@ -105,14 +105,17 @@ See also [Chapter 4 : Functions, lists and loops](https://remkoduursma.github.io
 
 ### Video
 
-To follow
+Edited recording of the second training (1h36m).
+
+[Link to Youtube video](https://www.youtube.com/watch?v=_RIrGbZgY1g)
+
+- Demonstration of writing functions, working with lists.
+
 
 
 </div>
 
 <br>
-
-
 
 
 <div class = "training-card">
